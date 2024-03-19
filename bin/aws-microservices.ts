@@ -3,6 +3,7 @@ import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
 import { AwsMicroservicesStack } from '../lib/aws-microservices-stack';
 
+
 const app = new cdk.App();
 new AwsMicroservicesStack(app, 'AwsMicroservicesStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.

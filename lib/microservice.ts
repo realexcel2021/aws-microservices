@@ -38,7 +38,7 @@ export class SwnMicroservices extends Construct {
         PRIMARY_KEY: 'id',
         DYNAMODB_TABLE_NAME: productTable.tableName
       },
-      runtime: Runtime.NODEJS_14_X
+      runtime: Runtime.NODEJS_18_X
     }
 
     // Product microservices lambda function
@@ -66,7 +66,7 @@ export class SwnMicroservices extends Construct {
           EVENT_DETAILTYPE: "CheckoutBasket",
           EVENT_BUSNAME: "SwnEventBus"
       },
-      runtime: Runtime.NODEJS_14_X,
+      runtime: Runtime.NODEJS_18_X,
     }
 
     const basketFunction = new NodejsFunction(this, 'basketLambdaFunction', {
@@ -90,7 +90,7 @@ export class SwnMicroservices extends Construct {
             SORT_KEY: 'orderDate',
             DYNAMODB_TABLE_NAME: orderTable.tableName,
         },
-        runtime: Runtime.NODEJS_14_X,
+        runtime: Runtime.NODEJS_18_X,
     }
 
     const orderFunction = new NodejsFunction(this, 'orderingLambdaFunction', {
